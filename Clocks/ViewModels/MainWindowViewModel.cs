@@ -14,21 +14,21 @@ namespace Clocks.ViewModels
 
         public DateTime CurrentTime { get { return DateTime.Now; } }
 
-        private int _SecondAngle;
+        private int _SecondAngle = DateTime.Now.Second*6;
         public int SecondAngle
         {
             get => _SecondAngle;
             set => Set(ref _SecondAngle,value);
         }
 
-        private double _MinuteAngle;
+        private double _MinuteAngle = DateTime.Now.Minute * 6;
         public double MinuteAngle
         {
             get => _MinuteAngle;
             set => Set(ref _MinuteAngle, value);
         }
 
-        private double _HourAngle;
+        private double _HourAngle = DateTime.Now.Hour * 6;
         public double HourAngle
         {
             get => _HourAngle;
@@ -47,7 +47,6 @@ namespace Clocks.ViewModels
         {
             CloseAppCommand = new ActionCommand(OnCloseAppCommandExecuted, CanCloseAppCommandExecuted);
             _timer = new DispatcherTimer { Interval = TimeSpan.FromSeconds(1) };
-            
             _timer.Start();
             _timer.Tick += new EventHandler(Timer_Tick);
           
@@ -64,7 +63,7 @@ namespace Clocks.ViewModels
 
             MinuteAngle = (min * 6) + (SecondAngle / 60.0);
 
-            HourAngle = (hour - 12) * 6 + MinuteAngle / 12.0;
+            HourAngle = (hour - 12) * 30 + MinuteAngle / 12.0;
 
         }
     }
