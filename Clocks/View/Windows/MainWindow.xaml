@@ -3,25 +3,690 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm ="clr-namespace:Clocks.ViewModels"
         xmlns:local="clr-namespace:Clocks"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <!-- Секундная стрелка -->
+        Title="MainWindow" Height="450" Width="800" WindowStyle="None"  AllowsTransparency="True" Background="Black">
+        <Window.DataContext>
+        <vm:MainWindowViewModel/>
+        </Window.DataContext>
+            <Grid Background="WhiteSmoke">
+        <Border CornerRadius="325" Background="WhiteSmoke" Margin="5"></Border>
 
-        <!-- Контейнер -->
-        <Border x:Name="SecondArrow" HorizontalAlignment="Center" 
-        Width="2" Padding="0,15,0,0" RenderTransformOrigin="0.5,0.5">
-            <Grid>
-                <!-- Указатель -->
-                <Border  BorderBrush="Black"  HorizontalAlignment="Stretch" 
-            VerticalAlignment="Top" Background="#65737e" Height="180" Margin="0,20,0,0"/>
-                <!-- /Указатель -->
+        <!-- Главная форма часов, несущая на себе все "запчасти" часового механизма -->
+        <Border x:Name="Forma" BorderThickness="5,5,5,5" CornerRadius="325" Padding="5,5,5,2" Background="WhiteSmoke">
+            <!-- Циферблат часов -->
+            <Grid x:Name="Clock">
+                <Button HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Height="20" Padding="0,0,0,0" Command="{Binding CloseAppCommand}">
+                    <TextBlock Text="Exit" />
+                </Button>
+                <!-- Расположение минут -->
+                <Grid>
+                <Border HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                    <Border.RenderTransform>
+                        <TransformGroup>
+                            <RotateTransform Angle="6"/>
+                        </TransformGroup>
+                    </Border.RenderTransform>
+                    <Border Background = "#343d52" Height="15" Width ="5" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,10,0,0"/>
+                </Border>
+                <Border HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                    <Border.RenderTransform>
+                        <TransformGroup>
+                            <RotateTransform Angle="12"/>
+                        </TransformGroup>
+                    </Border.RenderTransform>
+                    <Border Background = "#343d52" Height="15" Width ="5" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,10,0,0"/>
+                </Border>
+                    <Border HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                        <Border.RenderTransform>
+                            <TransformGroup>
+                                <RotateTransform Angle="18"/>
+                            </TransformGroup>
+                        </Border.RenderTransform>
+                        <Border Background = "#343d52" Height="15" Width ="5" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,10,0,0"/>
+                    </Border>
+                    <Border HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                        <Border.RenderTransform>
+                            <TransformGroup>
+                                <RotateTransform Angle="24"/>
+                            </TransformGroup>
+                        </Border.RenderTransform>
+                        <Border Background = "#343d52" Height="15" Width ="5" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,10,0,0"/>
+                    </Border>
+                    <Border HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                        <Border.RenderTransform>
+                            <TransformGroup>
+                                <RotateTransform Angle="36"/>
+                            </TransformGroup>
+                        </Border.RenderTransform>
+                        <Border Background = "#343d52" Height="15" Width ="5" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,10,0,0"/>
+                    </Border>
+                    <Border HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                        <Border.RenderTransform>
+                            <TransformGroup>
+                                <RotateTransform Angle="42"/>
+                            </TransformGroup>
+                        </Border.RenderTransform>
+                        <Border Background = "#343d52" Height="15" Width ="5" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,10,0,0"/>
+                    </Border>
+                    <Border HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                        <Border.RenderTransform>
+                            <TransformGroup>
+                                <RotateTransform Angle="48"/>
+                            </TransformGroup>
+                        </Border.RenderTransform>
+                        <Border Background = "#343d52" Height="15" Width ="5" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,10,0,0"/>
+                    </Border>
+                    <Border HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                        <Border.RenderTransform>
+                            <TransformGroup>
+                                <RotateTransform Angle="54"/>
+                            </TransformGroup>
+                        </Border.RenderTransform>
+                        <Border Background = "#343d52" Height="15" Width ="5" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,10,0,0"/>
+                    </Border>
+                    <Border HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                        <Border.RenderTransform>
+                            <TransformGroup>
+                                <RotateTransform Angle="64"/>
+                            </TransformGroup>
+                        </Border.RenderTransform>
+                        <Border Background = "#343d52" Height="15" Width ="5" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,10,0,0"/>
+                    </Border>
+                    <Border HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                        <Border.RenderTransform>
+                            <TransformGroup>
+                                <RotateTransform Angle="70"/>
+                            </TransformGroup>
+                        </Border.RenderTransform>
+                        <Border Background = "#343d52" Height="15" Width ="5" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,10,0,0"/>
+                    </Border>
+                    <Border HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                        <Border.RenderTransform>
+                            <TransformGroup>
+                                <RotateTransform Angle="76"/>
+                            </TransformGroup>
+                        </Border.RenderTransform>
+                        <Border Background = "#343d52" Height="15" Width ="5" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,10,0,0"/>
+                    </Border>
+                    <Border HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                        <Border.RenderTransform>
+                            <TransformGroup>
+                                <RotateTransform Angle="82"/>
+                            </TransformGroup>
+                        </Border.RenderTransform>
+                        <Border Background = "#343d52" Height="15" Width ="5" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,10,0,0"/>
+                    </Border>
+                    <Border HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                        <Border.RenderTransform>
+                            <TransformGroup>
+                                <RotateTransform Angle="94"/>
+                            </TransformGroup>
+                        </Border.RenderTransform>
+                        <Border Background = "#343d52" Height="15" Width ="5" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,10,0,0"/>
+                    </Border>
+                    <Border HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                        <Border.RenderTransform>
+                            <TransformGroup>
+                                <RotateTransform Angle="100"/>
+                            </TransformGroup>
+                        </Border.RenderTransform>
+                        <Border Background = "#343d52" Height="15" Width ="5" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,10,0,0"/>
+                    </Border>
+                    <Border HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                        <Border.RenderTransform>
+                            <TransformGroup>
+                                <RotateTransform Angle="106"/>
+                            </TransformGroup>
+                        </Border.RenderTransform>
+                        <Border Background = "#343d52" Height="15" Width ="5" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,10,0,0"/>
+                    </Border>
+                    <Border HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                        <Border.RenderTransform>
+                            <TransformGroup>
+                                <RotateTransform Angle="112"/>
+                            </TransformGroup>
+                        </Border.RenderTransform>
+                        <Border Background = "#343d52" Height="15" Width ="5" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,10,0,0"/>
+                    </Border>
+                    <Border HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                        <Border.RenderTransform>
+                            <TransformGroup>
+                                <RotateTransform Angle="124"/>
+                            </TransformGroup>
+                        </Border.RenderTransform>
+                        <Border Background = "#343d52" Height="15" Width ="5" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,10,0,0"/>
+                    </Border>
+                    <Border HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                        <Border.RenderTransform>
+                            <TransformGroup>
+                                <RotateTransform Angle="130"/>
+                            </TransformGroup>
+                        </Border.RenderTransform>
+                        <Border Background = "#343d52" Height="15" Width ="5" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,10,0,0"/>
+                    </Border>
+                    <Border HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                        <Border.RenderTransform>
+                            <TransformGroup>
+                                <RotateTransform Angle="136"/>
+                            </TransformGroup>
+                        </Border.RenderTransform>
+                        <Border Background = "#343d52" Height="15" Width ="5" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,10,0,0"/>
+                    </Border>
+                    <Border HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                        <Border.RenderTransform>
+                            <TransformGroup>
+                                <RotateTransform Angle="142"/>
+                            </TransformGroup>
+                        </Border.RenderTransform>
+                        <Border Background = "#343d52" Height="15" Width ="5" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,10,0,0"/>
+                    </Border>
+                    <Border HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                        <Border.RenderTransform>
+                            <TransformGroup>
+                                <RotateTransform Angle="154"/>
+                            </TransformGroup>
+                        </Border.RenderTransform>
+                        <Border Background = "#343d52" Height="15" Width ="5" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,10,0,0"/>
+                    </Border>
+                    <Border HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                        <Border.RenderTransform>
+                            <TransformGroup>
+                                <RotateTransform Angle="160"/>
+                            </TransformGroup>
+                        </Border.RenderTransform>
+                        <Border Background = "#343d52" Height="15" Width ="5" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,10,0,0"/>
+                    </Border>
+                    <Border HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                        <Border.RenderTransform>
+                            <TransformGroup>
+                                <RotateTransform Angle="166"/>
+                            </TransformGroup>
+                        </Border.RenderTransform>
+                        <Border Background = "#343d52" Height="15" Width ="5" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,10,0,0"/>
+                    </Border>
+                    <Border HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                        <Border.RenderTransform>
+                            <TransformGroup>
+                                <RotateTransform Angle="172"/>
+                            </TransformGroup>
+                        </Border.RenderTransform>
+                        <Border Background = "#343d52" Height="15" Width ="5" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,10,0,0"/>
+                    </Border>
+                    <Border HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                        <Border.RenderTransform>
+                            <TransformGroup>
+                                <RotateTransform Angle="184"/>
+                            </TransformGroup>
+                        </Border.RenderTransform>
+                        <Border Background = "#343d52" Height="15" Width ="5" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,10,0,0"/>
+                    </Border>
+                    <Border HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                        <Border.RenderTransform>
+                            <TransformGroup>
+                                <RotateTransform Angle="190"/>
+                            </TransformGroup>
+                        </Border.RenderTransform>
+                        <Border Background = "#343d52" Height="15" Width ="5" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,10,0,0"/>
+                    </Border>
+                    <Border HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                        <Border.RenderTransform>
+                            <TransformGroup>
+                                <RotateTransform Angle="196"/>
+                            </TransformGroup>
+                        </Border.RenderTransform>
+                        <Border Background = "#343d52" Height="15" Width ="5" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,10,0,0"/>
+                    </Border>
+                    <Border HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                        <Border.RenderTransform>
+                            <TransformGroup>
+                                <RotateTransform Angle="202"/>
+                            </TransformGroup>
+                        </Border.RenderTransform>
+                        <Border Background = "#343d52" Height="15" Width ="5" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,10,0,0"/>
+                    </Border>
+                    <Border HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                        <Border.RenderTransform>
+                            <TransformGroup>
+                                <RotateTransform Angle="214"/>
+                            </TransformGroup>
+                        </Border.RenderTransform>
+                        <Border Background = "#343d52" Height="15" Width ="5" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,10,0,0"/>
+                    </Border>
+                    <Border HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                        <Border.RenderTransform>
+                            <TransformGroup>
+                                <RotateTransform Angle="220"/>
+                            </TransformGroup>
+                        </Border.RenderTransform>
+                        <Border Background = "#343d52" Height="15" Width ="5" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,10,0,0"/>
+                    </Border>
+                    <Border HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                        <Border.RenderTransform>
+                            <TransformGroup>
+                                <RotateTransform Angle="226"/>
+                            </TransformGroup>
+                        </Border.RenderTransform>
+                        <Border Background = "#343d52" Height="15" Width ="5" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,10,0,0"/>
+                    </Border>
+                    <Border HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                        <Border.RenderTransform>
+                            <TransformGroup>
+                                <RotateTransform Angle="232"/>
+                            </TransformGroup>
+                        </Border.RenderTransform>
+                        <Border Background = "#343d52" Height="15" Width ="5" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,10,0,0"/>
+                    </Border>
+                    <Border HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                        <Border.RenderTransform>
+                            <TransformGroup>
+                                <RotateTransform Angle="244"/>
+                            </TransformGroup>
+                        </Border.RenderTransform>
+                        <Border Background = "#343d52" Height="15" Width ="5" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,10,0,0"/>
+                    </Border>
+                    <Border HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                        <Border.RenderTransform>
+                            <TransformGroup>
+                                <RotateTransform Angle="250"/>
+                            </TransformGroup>
+                        </Border.RenderTransform>
+                        <Border Background = "#343d52" Height="15" Width ="5" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,10,0,0"/>
+                    </Border>
+                    <Border HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                        <Border.RenderTransform>
+                            <TransformGroup>
+                                <RotateTransform Angle="256"/>
+                            </TransformGroup>
+                        </Border.RenderTransform>
+                        <Border Background = "#343d52" Height="15" Width ="5" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,10,0,0"/>
+                    </Border>
+                    <Border HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                        <Border.RenderTransform>
+                            <TransformGroup>
+                                <RotateTransform Angle="262"/>
+                            </TransformGroup>
+                        </Border.RenderTransform>
+                        <Border Background = "#343d52" Height="15" Width ="5" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,10,0,0"/>
+                    </Border>
+                    <Border HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                        <Border.RenderTransform>
+                            <TransformGroup>
+                                <RotateTransform Angle="274"/>
+                            </TransformGroup>
+                        </Border.RenderTransform>
+                        <Border Background = "#343d52" Height="15" Width ="5" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,10,0,0"/>
+                    </Border>
+                    <Border HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                        <Border.RenderTransform>
+                            <TransformGroup>
+                                <RotateTransform Angle="280"/>
+                            </TransformGroup>
+                        </Border.RenderTransform>
+                        <Border Background = "#343d52" Height="15" Width ="5" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,10,0,0"/>
+                    </Border>
+                    <Border HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                        <Border.RenderTransform>
+                            <TransformGroup>
+                                <RotateTransform Angle="286"/>
+                            </TransformGroup>
+                        </Border.RenderTransform>
+                        <Border Background = "#343d52" Height="15" Width ="5" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,10,0,0"/>
+                    </Border>
+                    <Border HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                        <Border.RenderTransform>
+                            <TransformGroup>
+                                <RotateTransform Angle="292"/>
+                            </TransformGroup>
+                        </Border.RenderTransform>
+                        <Border Background = "#343d52" Height="15" Width ="5" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,10,0,0"/>
+                    </Border>
+                    <Border HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                        <Border.RenderTransform>
+                            <TransformGroup>
+                                <RotateTransform Angle="304"/>
+                            </TransformGroup>
+                        </Border.RenderTransform>
+                        <Border Background = "#343d52" Height="15" Width ="5" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,10,0,0"/>
+                    </Border>
+                    <Border HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                        <Border.RenderTransform>
+                            <TransformGroup>
+                                <RotateTransform Angle="310"/>
+                            </TransformGroup>
+                        </Border.RenderTransform>
+                        <Border Background = "#343d52" Height="15" Width ="5" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,10,0,0"/>
+                    </Border>
+                    <Border HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                        <Border.RenderTransform>
+                            <TransformGroup>
+                                <RotateTransform Angle="316"/>
+                            </TransformGroup>
+                        </Border.RenderTransform>
+                        <Border Background = "#343d52" Height="15" Width ="5" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,10,0,0"/>
+                    </Border>
+                    <Border HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                        <Border.RenderTransform>
+                            <TransformGroup>
+                                <RotateTransform Angle="322"/>
+                            </TransformGroup>
+                        </Border.RenderTransform>
+                        <Border Background = "#343d52" Height="15" Width ="5" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,10,0,0"/>
+                    </Border>
+                    <Border HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                        <Border.RenderTransform>
+                            <TransformGroup>
+                                <RotateTransform Angle="334"/>
+                            </TransformGroup>
+                        </Border.RenderTransform>
+                        <Border Background = "#343d52" Height="15" Width ="5" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,10,0,0"/>
+                    </Border>
+                    <Border HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                        <Border.RenderTransform>
+                            <TransformGroup>
+                                <RotateTransform Angle="340"/>
+                            </TransformGroup>
+                        </Border.RenderTransform>
+                        <Border Background = "#343d52" Height="15" Width ="5" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,10,0,0"/>
+                    </Border>
+                    <Border HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                        <Border.RenderTransform>
+                            <TransformGroup>
+                                <RotateTransform Angle="346"/>
+                            </TransformGroup>
+                        </Border.RenderTransform>
+                        <Border Background = "#343d52" Height="15" Width ="5" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,10,0,0"/>
+                    </Border>
+                    <Border HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                        <Border.RenderTransform>
+                            <TransformGroup>
+                                <RotateTransform Angle="352"/>
+                            </TransformGroup>
+                        </Border.RenderTransform>
+                        <Border Background = "#343d52" Height="15" Width ="5" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,10,0,0"/>
+                    </Border>
+                </Grid>
+                <!--/Расположение минут -->
                 
-            </Grid>
-        </Border>
-        <!-- /Контейнер -->
+                <!-- Расположение цифр -->
+                <Grid>
+                    <!-- Цифра 1 -->
+                    <Border HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                        <Border.RenderTransform>
+                            <TransformGroup>
+                                <RotateTransform Angle="30"/>
+                            </TransformGroup>
+                        </Border.RenderTransform>
+                        <TextBlock Text="1" FontSize="60" FontWeight="Bold" 
+                           RenderTransformOrigin="0.5,0.5" FontFamily="Book Antiqua"
+                           VerticalAlignment="Top" HorizontalAlignment="Center" Foreground="#343d52">
+                            <TextBlock.RenderTransform>
+                                <TransformGroup>
+                                    <RotateTransform Angle="-30"/>
+                                </TransformGroup>
+                            </TextBlock.RenderTransform>
 
-        <!-- /Секундная стрелка -->
+                        </TextBlock>
+                    </Border>
+                    <!-- /Цифра 1 -->
+                    <!-- Цифра 2 -->
+                    <Border HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                        <Border.RenderTransform>
+                            <TransformGroup>
+                                <RotateTransform Angle="60"/>
+                            </TransformGroup>
+                        </Border.RenderTransform>
+                        <TextBlock Text="2" FontSize="60" FontWeight="Bold" 
+                           RenderTransformOrigin="0.5,0.5" FontFamily="Book Antiqua"
+                           VerticalAlignment="Top" HorizontalAlignment="Center" Foreground="#343d52">
+                            <TextBlock.RenderTransform>
+                                <TransformGroup>
+                                    <RotateTransform Angle="-60"/>
+                                </TransformGroup>
+                            </TextBlock.RenderTransform>
+
+                        </TextBlock>
+                    </Border>
+                    <!-- /Цифра 2 -->
+                    <!-- Цифра 3 -->
+                    <Border HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                        <Border.RenderTransform>
+                            <TransformGroup>
+                                <RotateTransform Angle="90"/>
+                            </TransformGroup>
+                        </Border.RenderTransform>
+                        <TextBlock Text="3" FontSize="60" FontWeight="Bold" 
+                           RenderTransformOrigin="0.5,0.5" FontFamily="Book Antiqua"
+                           VerticalAlignment="Top" HorizontalAlignment="Center" Foreground="#343d52">
+                            <TextBlock.RenderTransform>
+                                <TransformGroup>
+                                    <RotateTransform Angle="-90"/>
+                                </TransformGroup>
+                            </TextBlock.RenderTransform>
+
+                        </TextBlock>
+                    </Border>
+                    <!-- /Цифра 3 -->
+                    <!-- Цифра 4 -->
+                    <Border HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                        <Border.RenderTransform>
+                            <TransformGroup>
+                                <RotateTransform Angle="120"/>
+                            </TransformGroup>
+                        </Border.RenderTransform>
+                        <TextBlock Text="4" FontSize="60" FontWeight="Bold" 
+                           RenderTransformOrigin="0.5,0.5" FontFamily="Book Antiqua"
+                           VerticalAlignment="Top" HorizontalAlignment="Center" Foreground="#343d52">
+                            <TextBlock.RenderTransform>
+                                <TransformGroup>
+                                    <RotateTransform Angle="-120"/>
+                                </TransformGroup>
+                            </TextBlock.RenderTransform>
+
+                        </TextBlock>
+                    </Border>
+                    <!-- /Цифра 4 -->
+                    <!-- Цифра 5 -->
+                    <Border HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                        <Border.RenderTransform>
+                            <TransformGroup>
+                                <RotateTransform Angle="150"/>
+                            </TransformGroup>
+                        </Border.RenderTransform>
+                        <TextBlock Text="5" FontSize="60" FontWeight="Bold" 
+                           RenderTransformOrigin="0.5,0.5" FontFamily="Book Antiqua"
+                           VerticalAlignment="Top" HorizontalAlignment="Center" Foreground="#343d52">
+                            <TextBlock.RenderTransform>
+                                <TransformGroup>
+                                    <RotateTransform Angle="-150"/>
+                                </TransformGroup>
+                            </TextBlock.RenderTransform>
+
+                        </TextBlock>
+                    </Border>
+                    <!-- /Цифра 5 -->
+                    <!-- Цифра 6 -->
+                    <Border HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                        <Border.RenderTransform>
+                            <TransformGroup>
+                                <RotateTransform Angle="180"/>
+                            </TransformGroup>
+                        </Border.RenderTransform>
+                        <TextBlock Text="6" FontSize="60" FontWeight="Bold" 
+                           RenderTransformOrigin="0.5,0.5" FontFamily="Book Antiqua"
+                           VerticalAlignment="Top" HorizontalAlignment="Center" Foreground="#343d52">
+                            <TextBlock.RenderTransform>
+                                <TransformGroup>
+                                    <RotateTransform Angle="-180"/>
+                                </TransformGroup>
+                            </TextBlock.RenderTransform>
+
+                        </TextBlock>
+                    </Border>
+                    <!-- /Цифра 6 -->
+                    <!-- Цифра 7 -->
+                    <Border HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                        <Border.RenderTransform>
+                            <TransformGroup>
+                                <RotateTransform Angle="210"/>
+                            </TransformGroup>
+                        </Border.RenderTransform>
+                        <TextBlock Text="7" FontSize="60" FontWeight="Bold" 
+                           RenderTransformOrigin="0.5,0.5" FontFamily="Book Antiqua"
+                           VerticalAlignment="Top" HorizontalAlignment="Center" Foreground="#343d52">
+                            <TextBlock.RenderTransform>
+                                <TransformGroup>
+                                    <RotateTransform Angle="-210"/>
+                                </TransformGroup>
+                            </TextBlock.RenderTransform>
+
+                        </TextBlock>
+                    </Border>
+                    <!-- /Цифра 7 -->
+                    <!-- Цифра 8 -->
+                    <Border HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                        <Border.RenderTransform>
+                            <TransformGroup>
+                                <RotateTransform Angle="240"/>
+                            </TransformGroup>
+                        </Border.RenderTransform>
+                        <TextBlock Text="8" FontSize="60" FontWeight="Bold" 
+                           RenderTransformOrigin="0.5,0.5" FontFamily="Book Antiqua"
+                           VerticalAlignment="Top" HorizontalAlignment="Center" Foreground="#343d52">
+                            <TextBlock.RenderTransform>
+                                <TransformGroup>
+                                    <RotateTransform Angle="-240"/>
+                                </TransformGroup>
+                            </TextBlock.RenderTransform>
+
+                        </TextBlock>
+                    </Border>
+                    <!-- /Цифра 8 -->
+                    <!-- Цифра 9 -->
+                    <Border HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                        <Border.RenderTransform>
+                            <TransformGroup>
+                                <RotateTransform Angle="270"/>
+                            </TransformGroup>
+                        </Border.RenderTransform>
+                        <TextBlock Text="9" FontSize="60" FontWeight="Bold" 
+                           RenderTransformOrigin="0.5,0.5" FontFamily="Book Antiqua"
+                           VerticalAlignment="Top" HorizontalAlignment="Center" Foreground="#343d52">
+                            <TextBlock.RenderTransform>
+                                <TransformGroup>
+                                    <RotateTransform Angle="-270"/>
+                                </TransformGroup>
+                            </TextBlock.RenderTransform>
+
+                        </TextBlock>
+                    </Border>
+                    <!-- /Цифра 9 -->
+                    <!-- Цифра 10 -->
+                    <Border HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                        <Border.RenderTransform>
+                            <TransformGroup>
+                                <RotateTransform Angle="300"/>
+                            </TransformGroup>
+                        </Border.RenderTransform>
+                        <TextBlock Text="10" FontSize="60" FontWeight="Bold" 
+                           RenderTransformOrigin="0.5,0.5" FontFamily="Book Antiqua"
+                           VerticalAlignment="Top" HorizontalAlignment="Center" Foreground="#343d52">
+                            <TextBlock.RenderTransform>
+                                <TransformGroup>
+                                    <RotateTransform Angle="-300"/>
+                                </TransformGroup>
+                            </TextBlock.RenderTransform>
+
+                        </TextBlock>
+                    </Border>
+                    <!-- /Цифра 10 -->
+                    <!-- Цифра 11 -->
+                    <Border HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                        <Border.RenderTransform>
+                            <TransformGroup>
+                                <RotateTransform Angle="330"/>
+                            </TransformGroup>
+                        </Border.RenderTransform>
+                        <TextBlock Text="11" FontSize="60" FontWeight="Bold" 
+                           RenderTransformOrigin="0.5,0.5" FontFamily="Book Antiqua"
+                           VerticalAlignment="Top" HorizontalAlignment="Center" Foreground="#343d52">
+                            <TextBlock.RenderTransform>
+                                <TransformGroup>
+                                    <RotateTransform Angle="-330"/>
+                                </TransformGroup>
+                            </TextBlock.RenderTransform>
+
+                        </TextBlock>
+                    </Border>
+                    <!-- /Цифра 11 -->
+                    <!-- Цифра 12 -->
+                    <Border HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                        <Border.RenderTransform>
+                            <TransformGroup>
+                                <RotateTransform Angle="360"/>
+                            </TransformGroup>
+                        </Border.RenderTransform>
+                        <TextBlock Text="12" FontSize="60" FontWeight="Bold" 
+                           RenderTransformOrigin="0.5,0.5" FontFamily="Book Antiqua"
+                           VerticalAlignment="Top" HorizontalAlignment="Center" Foreground="#343d52">
+                            <TextBlock.RenderTransform>
+                                <TransformGroup>
+                                    <RotateTransform Angle="-360"/>
+                                </TransformGroup>
+                            </TextBlock.RenderTransform>
+
+                        </TextBlock>
+                    </Border>
+                    <!-- /Цифра 12 -->
+                </Grid>
+                <!--/Расположение цифр -->
+                
+                <!-- Секундная стрелка -->
+                <Border x:Name="SecondArrow" HorizontalAlignment="Center" 
+                Width="2" Padding="0,15,0,0" RenderTransformOrigin="0.5,0.5">
+                    <Border.RenderTransform>
+                        <RotateTransform Angle="{Binding SecondAngle}" />
+                    </Border.RenderTransform>
+                    <Grid>
+                        <!-- Указатель -->
+                        <Border  BorderBrush="Black"  HorizontalAlignment="Stretch" 
+                         VerticalAlignment="Top" Background="#343d52" Height="135" Margin="0,70,0,0"/>
+                        <!-- /Указатель -->
+                    </Grid>
+                </Border>
+                <!-- /Секундная стрелка -->
+                <!-- Минутная стрелка -->
+                <Border x:Name="MinuteArrow" HorizontalAlignment="Center" 
+                Width="6" Padding="0,15,0,0" RenderTransformOrigin="0.5,0.5">
+                    <Border.RenderTransform>
+                        <RotateTransform Angle="{Binding MinuteAngle}" />
+                    </Border.RenderTransform>
+                    <Grid>
+                        <!-- Указатель -->
+                        <Border  BorderBrush="Black"  HorizontalAlignment="Stretch" 
+                         VerticalAlignment="Top" Background="#343d52" Height="135" Margin="0,70,0,0"/>
+                        <!-- /Указатель -->
+
+                    </Grid>
+                </Border>
+                <!-- /Минутная стрелка -->
+                <!-- Часовая стрелка -->
+                <Border x:Name="HoursArrow" HorizontalAlignment="Center" 
+                Width="6" Padding="0,15,0,0" RenderTransformOrigin="0.5,0.5">
+                    <Border.RenderTransform>
+                        <RotateTransform Angle="{Binding HourAngle}" />
+                    </Border.RenderTransform>
+                    <Grid>
+                        <!-- Указатель -->
+                        <Border  BorderBrush="Black"  HorizontalAlignment="Stretch" 
+                         VerticalAlignment="Top" Background="#343d52" Height="85" Margin="0,120,0,0"/>
+                        <!-- /Указатель -->
+
+                    </Grid>
+                </Border>
+                <!-- /Часовая стрелка -->
+            </Grid>
+        </Border>        
     </Grid>
 </Window>

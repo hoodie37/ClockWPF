@@ -1,7 +1,8 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System;
 
-namespace Clocks.ViewModel.Base
+namespace Clocks.ViewModels.Base
 {
     internal abstract class ViewModel : INotifyPropertyChanged
     {
